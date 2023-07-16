@@ -19,5 +19,10 @@ buttons.on('click', function(event) {
   const apptInput = inputs.eq(index).val();
   localStorage.setItem(`${index + 9} am`, JSON.stringify(apptInput));
 });
-
-
+//created a funtion that renders the schedule
+const renderSchedule = index => {
+  const scheduleDisplay = JSON.parse(localStorage.getItem(`${index + 9} am`));
+  if (scheduleDisplay !== null) {
+    inputs.eq(index).text(scheduleDisplay);
+  }
+}
