@@ -26,3 +26,15 @@ const renderSchedule = index => {
     inputs.eq(index).text(scheduleDisplay);
   }
 }
+//created a loop so it can loop through the schedule hours
+scheduleHours.each(function(index) {
+  const hour = $(this).attr('id');
+  if (daysjs().format('HH') > hour) {
+    $(this).addClass('past');
+  } else if (daysjs().format('HH') === hour) {
+    $(this).addClass('present');
+  } else if (dayjs().format('HH') < hour) {
+    $(this).addClass('future');
+  }
+  renderSchedule(index);
+});
