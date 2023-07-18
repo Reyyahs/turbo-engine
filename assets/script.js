@@ -23,15 +23,15 @@ buttons.on('click', function(event) {
 const renderSchedule = index => {
   const scheduleDisplay = JSON.parse(localStorage.getItem(`${index + 9} am`));
   if (scheduleDisplay !== null) {
-    inputs.eq(index).text(scheduleDisplay);
+    inputs.eq(index).val(scheduleDisplay);
   }
 }
 //created a loop so it can loop through the schedule hours
 scheduleHours.each(function(index) {
   const hour = $(this).attr('id');
-  if (daysjs().format('HH') > hour) {
+  if (dayjs().format('HH') > hour) {
     $(this).addClass('past');
-  } else if (daysjs().format('HH') === hour) {
+  } else if (dayjs().format('HH') === hour) {
     $(this).addClass('present');
   } else if (dayjs().format('HH') < hour) {
     $(this).addClass('future');
