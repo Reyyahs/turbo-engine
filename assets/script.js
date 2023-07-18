@@ -1,3 +1,4 @@
+$(document).ready(function() {
 //created variable Declarations
 const timeDisplayEl = $('#currentDay');
 const scheduleHours = $('.time-block');
@@ -28,13 +29,18 @@ const renderSchedule = index => {
 }
 //created a loop so it can loop through the schedule hours
 scheduleHours.each(function(index) {
-  const hour = $(this).attr('id');
-  if (dayjs().format('HH') > hour) {
+  const hour = $(this).attr('id').split('-')[1];
+  const currentHour = dayjs().format('H');
+  console.log(hour);
+  console.log(dayjs().format('HH'));
+  if (currentHour > hour) {
     $(this).addClass('past');
-  } else if (dayjs().format('HH') === hour) {
+  } else if (currentHour === hour) {
     $(this).addClass('present');
-  } else if (dayjs().format('HH') < hour) {
+  } else {
     $(this).addClass('future');
   }
+
   renderSchedule(index);
+  });
 });
