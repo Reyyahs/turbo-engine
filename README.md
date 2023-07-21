@@ -20,3 +20,4 @@ Preview of the application of how it works
 ![alt text](/assets/demo-vid/Work%20Day%20Scheduler.gif)
 
 # Link to Deployed Application
+https://reyyahs.github.io/turbo-engine/
