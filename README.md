@@ -17,6 +17,6 @@ Create a website that servers as a daily planner. Shows the current day and is d
 # Usage
 
 Preview of the application of how it works
-![alt text](/assets/demo-vid/Work%20Day%20Scheduler%20-%20Google%20Chrome%202023-07-21%2016-27-45.mp4)
+![alt text](/assets/demo-vid/Work%20Day%20Scheduler.gif)
 
 # Link to Deployed Application
